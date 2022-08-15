@@ -6,7 +6,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 function App () {
   return (
-    <>
+    <div className='bg-green-400 bg-opacity-20'>
     <Layout>
 
     <Header />
@@ -17,7 +17,7 @@ function App () {
       <Route path='/episodes' element={<h1>episodios</h1>} />
       </Routes>
     </Layout>
-    </>
+    </div>
 
   )
 }

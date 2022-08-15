@@ -36,7 +36,7 @@ function Header () {
           {
             ITEMS_NAV.map((e) => (
               <li key={e.link} className='mx-4 my-6 md:my-0'>
-                <Link className='text-xl text-green-600  hover:text-green-500 duration-300' to={e.link}>{e.name}</Link>
+                <Link onClick={handleBurger} className='text-xl text-green-600  hover:text-green-500 duration-300' to={e.link}>{e.name}</Link>
               </li>
             ))
           }
