@@ -6,7 +6,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 function App () {
   return (
-    <div className='bg-green-400 bg-opacity-20'>
+    <div className='bg-green-600 bg-opacity-20'>
     <Layout>
 
     <Header />
