@@ -6,7 +6,7 @@ interface Props {
 }
 const ListCharacters = ({ characters }:Props) => {
   return (
-    <article className='flex flex-wrap gap-1 justify-center lg:justify-between'>
+    <article className='flex flex-wrap gap-1 justify-center lg:justify-between min-h-screen'>
       {
         characters.map((c) => (
           <CharacterCard key={c.id} id={c.id} name={c.name} nickname={c.nickname} status={c.status} image={c.image} />
