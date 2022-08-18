@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Character, CharactersFromApi } from '../types'
+import { BASE_URL } from './settings'
 
-const BASE_URL = 'https://www.breakingbadapi.com/api'
 const mapApiToApp = (apiResponse: CharactersFromApi[]):Character[] => {
   return apiResponse.map(characterFromApi => {
     const {
