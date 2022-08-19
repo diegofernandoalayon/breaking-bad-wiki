@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 interface Props {
   // elementRef: React.RefObject<HTMLDivElement>
   distance: string
+  once: boolean
 }
-const useNearScreen = ({ distance = '100px' }: Props) => {
+const useNearScreen = ({ distance = '100px', once = true }: Props) => {
   const [isNearScreen, setIsNearScreen] = useState<boolean>(false)
   const fromRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -13,7 +14,9 @@ const useNearScreen = ({ distance = '100px' }: Props) => {
     const callback = (e:IntersectionObserverEntry[], observer:IntersectionObserver) => {
       if (e[0].isIntersecting) {
         setIsNearScreen(true)
-        observer.disconnect()
+        once && observer.disconnect()
+      } else {
+        !once && setIsNearScreen(false)
       }
     }
 
