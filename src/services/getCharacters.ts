@@ -1,6 +1,9 @@
 import { BASE_URL } from './settings'
 import axios from 'axios'
 import { Character, CharactersFromApi } from '../types'
+interface Props{
+  page: number
+}
 
 const mapApiToApp = (apiResponse: CharactersFromApi[]):Character[] => {
   return apiResponse.map(characterFromApi => {
@@ -20,8 +23,8 @@ const mapApiToApp = (apiResponse: CharactersFromApi[]):Character[] => {
     }
   })
 }
-const getCharacters = async () => {
-  const res = await axios.get(`${BASE_URL}/characters?limit=10&offset=0`)
+const getCharacters = async ({ page }:Props) => {
+  const res = await axios.get(`${BASE_URL}/characters?limit=10&offset=${10 * page}`)
   return mapApiToApp(res.data)
 }
 export default getCharacters
