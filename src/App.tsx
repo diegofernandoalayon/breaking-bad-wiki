@@ -31,6 +31,10 @@ function App () {
           path = '/episodes'
           element={<h1>episodios</h1>}
         />
+        <Route
+          path='*'
+          element='oho'
+        />
       </Routes>
     </CharactersContextProvider>
     </Layout>
