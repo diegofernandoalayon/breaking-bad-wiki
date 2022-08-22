@@ -4,6 +4,13 @@ export interface Character {
   status: string
   nickname: string
   image: string
+
+}
+
+export interface CharacterDetail extends Character{
+  birthday: string
+  actor: string
+  occupation: string[]
 }
 
 export interface CharactersFromApi {

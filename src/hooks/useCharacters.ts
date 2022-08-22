@@ -1,7 +1,6 @@
 // react
 import { useState, useEffect, useContext } from 'react'
-// types
-// import { Character } from '../types'
+
 // services
 import getCharacters from '../services/getCharacters'
 // context

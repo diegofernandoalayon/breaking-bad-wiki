@@ -1,25 +1,31 @@
 import { BASE_URL } from './settings'
 import axios from 'axios'
-import { Character, CharactersFromApi } from '../types'
+import { CharacterDetail, CharactersFromApi } from '../types'
 interface Props{
   page: number
 }
 
-const mapApiToApp = (apiResponse: CharactersFromApi[]):Character[] => {
+const mapApiToApp = (apiResponse: CharactersFromApi[]):CharacterDetail[] => {
   return apiResponse.map(characterFromApi => {
     const {
       nickname,
       name,
       char_id: id,
       status,
-      img: image
+      img: image,
+      birthday,
+      portrayed: actor,
+      occupation
     } = characterFromApi
     return {
       name,
       nickname,
       id,
       status,
-      image
+      image,
+      birthday,
+      actor,
+      occupation
     }
   })
 }
