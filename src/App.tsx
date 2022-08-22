@@ -15,10 +15,22 @@ function App () {
     <Header />
     <CharactersContextProvider>
       <Routes >
-        <Route path = '/' element={<Home />}/>
-        <Route path = '/characters' element={<Characters />} />
-        <Route path = '/characters/:id' element={<CharacterDetail/>} />
-        <Route path = '/episodes' element={<h1>episodios</h1>} />
+        <Route
+          path = '/'
+          element={<Home />}
+        />
+        <Route
+          path = '/characters'
+          element={<Characters />}
+        />
+        <Route
+          path = '/characters/:id'
+          element={<CharacterDetail/>}
+        />
+        <Route
+          path = '/episodes'
+          element={<h1>episodios</h1>}
+        />
       </Routes>
     </CharactersContextProvider>
     </Layout>
