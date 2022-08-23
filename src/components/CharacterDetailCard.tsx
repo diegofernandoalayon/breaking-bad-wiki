@@ -1,9 +1,9 @@
 
-import { CharacterDetail } from '../types'
+import { ICharacterDetail } from '../types'
 const alive = 'bg-green-300 text-green-800'
 const deceased = 'bg-red-300 text-red-800 '
 const other = 'bg-orange-300 text-orange-800'
-const CharacterDetailCard = ({ name, nickname, actor, birthday, id, image, status, occupation }:CharacterDetail) => {
+const CharacterDetailCard = ({ name, nickname, actor, birthday, id, image, status, occupation }:ICharacterDetail) => {
   return (
     <div className='flex flex-wrap md:flex-nowrap items-center gap-4 mt-2 justify-center'>
       <img src={image} className='w-full px-2 sm:w-[350px] md:w-[400px]' alt={`profile ${name}`} />
