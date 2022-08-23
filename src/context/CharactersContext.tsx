@@ -1,11 +1,11 @@
 
 import React, { useState, createContext } from 'react'
 
-import { CharacterDetail } from '../types'
+import { ICharacterDetail } from '../types'
 
 interface CharacterContextProps {
-  characters: Array<CharacterDetail>
-  setCharacters: React.Dispatch<React.SetStateAction<CharacterDetail[]>>
+  characters: Array<ICharacterDetail>
+  setCharacters: React.Dispatch<React.SetStateAction<ICharacterDetail[]>>
 }
 
 export const CharactersContext = createContext<CharacterContextProps>({} as CharacterContextProps)
@@ -15,7 +15,7 @@ interface Props {
 }
 
 export const CharactersContextProvider = ({ children }:Props) => {
-  const [characters, setCharacters] = useState<CharacterDetail[]>([])
+  const [characters, setCharacters] = useState<ICharacterDetail[]>([])
   return (
     <CharactersContext.Provider value={{ characters, setCharacters }} >
 
