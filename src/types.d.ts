@@ -7,7 +7,7 @@ export interface Character {
 
 }
 
-export interface CharacterDetail extends Character{
+export interface ICharacterDetail extends Character{
   birthday: string
   actor: string
   occupation: string[]
