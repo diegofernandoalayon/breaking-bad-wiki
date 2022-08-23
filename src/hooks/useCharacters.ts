@@ -1,6 +1,5 @@
 // react
 import { useState, useEffect, useContext } from 'react'
-
 // services
 import getCharacters from '../services/getCharacters'
 // context
@@ -13,10 +12,16 @@ const useCharacters = () => {
   const [page, setPage] = useState<number>(0)
   useEffect(() => {
     setLoading(true)
+
     getCharacters({ page })
       .then((res) => {
-        setCharacters(c => [...c, ...res])
-        setLoading(false)
+        if (page === 0) {
+          setCharacters(res)
+          setLoading(false)
+        } else {
+          setCharacters(c => [...c, ...res])
+          setLoading(false)
+        }
       })
   }, [page])
 
