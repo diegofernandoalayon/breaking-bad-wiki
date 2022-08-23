@@ -1,11 +1,12 @@
 import { BASE_URL } from './settings'
 import axios from 'axios'
-import { CharacterDetail, CharactersFromApi } from '../types'
+import { ICharacterDetail, CharactersFromApi } from '../types'
 interface Props{
   page: number
 }
+// interface PropsOne
 
-const mapApiToApp = (apiResponse: CharactersFromApi[]):CharacterDetail[] => {
+const mapApiToApp = (apiResponse: CharactersFromApi[]):ICharacterDetail[] => {
   return apiResponse.map(characterFromApi => {
     const {
       nickname,
@@ -34,3 +35,8 @@ const getCharacters = async ({ page }:Props) => {
   return mapApiToApp(res.data)
 }
 export default getCharacters
+
+export const getOneCharaterById = async ({ id }:{id:string}) => {
+  const res = await axios.get(`${BASE_URL}/characters/${id}`)
+  return mapApiToApp(res.data)
+}
