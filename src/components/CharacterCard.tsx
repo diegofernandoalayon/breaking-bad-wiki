@@ -1,9 +1,9 @@
 import React from 'react'
 import { Character } from '../types'
 import { useNavigate } from 'react-router-dom'
-const alive = 'bg-green-300 text-green-800'
-const deceased = 'bg-red-300 text-red-800 '
-const other = 'bg-orange-300 text-orange-800'
+const alive = 'bg-green-200 text-green-900'
+const deceased = 'bg-red-200 text-red-900 '
+const other = 'bg-orange-200 text-orange-900'
 const CharacterCard:React.FC<Character> = ({ id, name, nickname, image, status }) => {
   const navigate = useNavigate()
   return (
@@ -11,7 +11,7 @@ const CharacterCard:React.FC<Character> = ({ id, name, nickname, image, status }
       <img src={image} alt={`profile ${name}`} className='w-full p-2 h-[400px] rounded-t-3xl object-cover'/>
 
       <div className='bg-white bg-opacity-75 ml-2 mr-2 absolute bottom-2 hover:-translate-y-1 w-[95%]'>
-        <div className='flex flex-col ml-2 text-pink-700'>
+        <div className='flex flex-col ml-2 '>
           <p>
             <strong>Name:</strong> {name}
           </p>

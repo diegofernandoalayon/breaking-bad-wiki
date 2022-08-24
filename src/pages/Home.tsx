@@ -3,6 +3,7 @@ import getRandomCharacters from '../services/getRandomCharacters'
 import Search from '../components/Search'
 import { Character } from '../types'
 import ListCharacters from '../components/ListCharacters'
+import { Helmet } from 'react-helmet'
 
 function Home () {
   const [randomCharacters, setRandomCharacters] = useState<Character[]>([])
@@ -20,6 +21,11 @@ function Home () {
   return (
     <section className='my-2' >
       <Search />
+      <Helmet>
+        <meta charSet='utf-8'/>
+        <title>breaking bad wiki | Home</title>
+        <meta name='description' content='website to search characters  of breaking bad and see their characteristics'/>
+      </Helmet>
       <div className='flex justify-around'>
         <h2 className='text-5xl text-center'>Home</h2>
         <button className='bg-green-500 text-white px-2 hover:bg-green-400 rounded text-lg' onClick={() => setNewRequest(r => r + 1)}>Random</button>

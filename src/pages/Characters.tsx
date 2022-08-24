@@ -3,6 +3,7 @@ import ListCharacters from '../components/ListCharacters'
 import useNearScreen from '../hooks/useNearScreen'
 import debounce from 'just-debounce-it'
 import useCharacters from '../hooks/useCharacters'
+import { Helmet } from 'react-helmet'
 
 function Characters () {
   const { characters, setPage } = useCharacters()
@@ -13,6 +14,10 @@ function Characters () {
   }, [isNearScreen])
   return (
     <div>
+      <Helmet>
+        <title>breaking bad wiki | characters</title>
+        <meta name='description' content='all characters of breaking bad with a short description'/>
+      </Helmet>
       <div className='min-h-screen'>
         <h2 className='text-4xl text-red-400'>Characters</h2>
         <ListCharacters characters={characters}/>
