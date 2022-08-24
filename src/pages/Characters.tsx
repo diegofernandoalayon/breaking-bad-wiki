@@ -9,7 +9,6 @@ function Characters () {
   const { isNearScreen, fromRef } = useNearScreen({ distance: '100px', once: false })
   const debounceHandleNextPage = useCallback(debounce(() => setPage(p => p + 1), 500), [setPage])
   useEffect(() => {
-    console.log(isNearScreen)
     if (isNearScreen) debounceHandleNextPage()
   }, [isNearScreen])
   return (

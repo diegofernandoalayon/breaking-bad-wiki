@@ -9,7 +9,6 @@ function CharacterDetail () {
   const params = useParams()
   const navigate = useNavigate()
   const [oneCharacter, setOneCharacter] = useState<ICharacterDetail[]>()
-  console.log(params)
   const { characters } = useContext(CharactersContext)
 
   const character = characters.find(c => c.id === +params.id!)
