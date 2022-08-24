@@ -4,11 +4,12 @@ import CharacterDetailCard from '../components/CharacterDetailCard'
 import CharactersContext from '../context/CharactersContext'
 import { ICharacterDetail } from '../types'
 import { getOneCharaterById } from '../services/getCharacters'
+import { Helmet } from 'react-helmet'
 
 function CharacterDetail () {
   const params = useParams()
   const navigate = useNavigate()
-  const [oneCharacter, setOneCharacter] = useState<ICharacterDetail[]>()
+  const [oneCharacter, setOneCharacter] = useState<ICharacterDetail>()
   const { characters } = useContext(CharactersContext)
 
   const character = characters.find(c => c.id === +params.id!)
@@ -22,7 +23,7 @@ function CharacterDetail () {
             if (res.length === 0) {
               throw new Error('not found character')
             }
-            setOneCharacter(res)
+            setOneCharacter(res[0])
           })
           .catch(() => {
             navigate('/characters')
@@ -32,8 +33,14 @@ function CharacterDetail () {
   }, [])
   return (
     <div>
+
       {
         character &&
+        <div>
+          <Helmet>
+            <title>breaking bad wiki | Detail for {character.name}</title>
+            <meta name="description" content={`Detail page for ${character.name}`}/>
+          </Helmet>
           <CharacterDetailCard
             id={character.id}
             name={character.name}
@@ -43,21 +50,28 @@ function CharacterDetail () {
             image={character.image!}
             occupation={character.occupation}
             status={character.status}
-          />
+            />
+        </div>
 
       }
       {
         oneCharacter &&
-        <CharacterDetailCard
-          id={oneCharacter[0].id}
-          name={oneCharacter[0].name}
-          nickname={oneCharacter[0].birthday}
-          actor={oneCharacter[0].actor}
-          birthday={oneCharacter[0].birthday!}
-          image={oneCharacter[0].image!}
-          occupation={oneCharacter[0].occupation}
-          status={oneCharacter[0].status}
-        />
+        <div>
+          <Helmet>
+            <title>breaking bad wiki | Detail for {oneCharacter.name}</title>
+            <meta name="description" content={`Detail page for ${oneCharacter.name}`}/>
+          </Helmet>
+          <CharacterDetailCard
+            id={oneCharacter.id}
+            name={oneCharacter.name}
+            nickname={oneCharacter.birthday}
+            actor={oneCharacter.actor}
+            birthday={oneCharacter.birthday!}
+            image={oneCharacter.image!}
+            occupation={oneCharacter.occupation}
+            status={oneCharacter.status}
+          />
+        </div>
       }
 
     </div>
