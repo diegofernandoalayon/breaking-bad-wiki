@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Characters from './pages/Characters'
 import { CharactersContextProvider } from './context/CharactersContext'
 import CharacterDetail from './pages/CharacterDetail'
+import Footer from './components/Footer'
 function App () {
   return (
     <div className=' bg-green-500 bg-opacity-10 min-h-screen'>
@@ -36,6 +37,7 @@ function App () {
           element='oho'
         />
       </Routes>
+      <Footer />
     </CharactersContextProvider>
     </Layout>
     </div>
