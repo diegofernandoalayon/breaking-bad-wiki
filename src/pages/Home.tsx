@@ -19,7 +19,7 @@ function Home () {
       .catch(err => console.error(err))
   }, [newRequest])
   return (
-    <section className='my-2' >
+    <section className='my-2 min-h-screen' >
       <Search />
       <Helmet>
         <meta charSet='utf-8'/>
