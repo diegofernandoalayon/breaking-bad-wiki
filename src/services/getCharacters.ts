@@ -40,3 +40,8 @@ export const getOneCharaterById = async ({ id }:{id:string}) => {
   const res = await axios.get(`${BASE_URL}/characters/${id}`)
   return mapApiToApp(res.data)
 }
+
+export const getOneCharacterByName = async ({ name }:{name:string}) => {
+  const res = await axios.get(`${BASE_URL}/characters?name=${name}`)
+  return mapApiToApp(res.data)
+}
