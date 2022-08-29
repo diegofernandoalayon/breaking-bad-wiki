@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import getRandomCharacters from '../services/getRandomCharacters'
-import Search from '../components/Search'
 import { Character } from '../types'
 import ListCharacters from '../components/ListCharacters'
 import { Helmet } from 'react-helmet'
@@ -20,7 +19,6 @@ function Home () {
   }, [newRequest])
   return (
     <section className='my-2 min-h-screen' >
-      <Search />
       <Helmet>
         <meta charSet='utf-8'/>
         <title>breaking bad wiki | Home</title>
