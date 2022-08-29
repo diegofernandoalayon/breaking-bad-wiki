@@ -8,12 +8,15 @@ import Characters from './pages/Characters'
 import { CharactersContextProvider } from './context/CharactersContext'
 import CharacterDetail from './pages/CharacterDetail'
 import Footer from './components/Footer'
+import SearchPage from './pages/SearchPage'
+import Search from './components/Search'
 function App () {
   return (
     <div className=' bg-green-500 bg-opacity-10 min-h-screen'>
     <Layout >
 
     <Header />
+    <Search />
     <CharactersContextProvider>
       <Routes >
         <Route
@@ -31,6 +34,10 @@ function App () {
         <Route
           path = '/episodes'
           element={<h1>episodios</h1>}
+        />
+        <Route
+          path = '/search/:name'
+          element={<SearchPage />}
         />
         <Route
           path='*'
