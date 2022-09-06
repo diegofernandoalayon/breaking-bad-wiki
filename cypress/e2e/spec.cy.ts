@@ -26,4 +26,9 @@ describe('page is running successfully', () => {
           )
       })
   })
-})
+  it.only('search character ', () => {
+    cy.get('.m-2 > .w-full').should('be.visible').should('be.enabled').type('walte')
+    cy.get('.m-2 > .bg-green-500').click()
+    cy.get('.flex-wrap').children().first().click()
+  })
+}) // fin describe

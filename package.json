@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@types/react-helmet": "^6.1.5",
