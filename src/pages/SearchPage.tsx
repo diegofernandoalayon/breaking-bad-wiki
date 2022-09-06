@@ -20,21 +20,27 @@ const Search = () => {
         .catch((err) => console.error(err))
     }
   }, [params])
+
   return (
-    <section>
+    <section className='min-h-screen'>
       <Helmet>
         <title>{`breakig bad wiki | results for ${decodeURI(name!)}`}</title>
         <meta name="description" content={`Search results for ${decodeURI(name!)}`}/>
       </Helmet>
-      <h2 className='text-2xl'>
-        {`Results for ${decodeURI(name!)}`}
-      </h2>
       {
         characters.length > 0
-          ? <ListCharacters
-          characters={characters}
-          />
-          : 'not found results'
+          ? <h2 className='text-2xl'>
+            {`Results for ${decodeURI(name!)}`}
+          </h2>
+          : <h2 className='text-2xl text-center text-red-400'>
+            {'Not found results'}
+          </h2>
+      }
+
+      {
+        characters.length > 0 && <ListCharacters
+                                    characters={characters}
+                                  />
       }
 
     </section>
