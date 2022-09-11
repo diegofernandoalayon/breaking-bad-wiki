@@ -19,7 +19,7 @@ function Characters () {
         <meta name='description' content='all characters of breaking bad with a short description'/>
       </Helmet>
       <div className='min-h-screen'>
-        <h2 className='text-4xl text-red-400'>Characters</h2>
+        <h2 className='text-5xl text-red-400'>Characters</h2>
         <ListCharacters characters={characters}/>
       </div>
       <div ref={fromRef}>
