@@ -26,9 +26,17 @@ describe('page is running successfully', () => {
           )
       })
   })
-  it.only('search character ', () => {
+  it('search character ', () => {
     cy.get('.m-2 > .w-full').should('be.visible').should('be.enabled').type('walte')
     cy.get('.m-2 > .bg-green-500').click()
     cy.get('.flex-wrap').children().first().click()
+  })
+  it('visit link home', () => {
+    cy.get(':nth-child(1) > .text-xl').should('be.visible').click()
+    cy.get('.text-5xl').contains('Home')
+  })
+  it('visit link characters', () => {
+    cy.get(':nth-child(2) > .text-xl').should('be.visible').click()
+    cy.get('.text-5xl').contains('Characters')
   })
 }) // fin describe
