@@ -1,3 +1,4 @@
+
 export interface Character {
   id: number
   name: string
@@ -26,3 +27,13 @@ export interface CharactersFromApi {
     portrayed: string;
     status: string;
    }
+
+export type ActionTypeCharacters =
+  {
+    type: 'add_characters',
+    payload:ICharacterDetail[]
+  }
+  |{
+    type: 'update_characters',
+    payload:ICharacterDetail[]
+  }
