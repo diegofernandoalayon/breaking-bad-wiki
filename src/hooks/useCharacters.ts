@@ -7,7 +7,7 @@ import CharactersContext from '../context/CharactersContext'
 
 const useCharacters = () => {
   // const [characters, setCharacters] = useState<Character[]>([])
-  const { characters, setCharacters } = useContext(CharactersContext)
+  const { characters, addCharacters, updateCharacters } = useContext(CharactersContext)
   const [loading, setLoading] = useState<boolean>(false)
   const [page, setPage] = useState<number>(0)
   useEffect(() => {
@@ -16,10 +16,12 @@ const useCharacters = () => {
     getCharacters({ page })
       .then((res) => {
         if (page === 0) {
-          setCharacters(res)
+          // setCharacters(res)
+          addCharacters(res)
           setLoading(false)
         } else {
-          setCharacters(c => [...c, ...res])
+          // setCharacters(c => [...c, ...res])
+          updateCharacters(res)
           setLoading(false)
         }
       })
